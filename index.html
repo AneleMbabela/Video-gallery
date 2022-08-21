@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1></h1>
+        <div class="row">
+            <div class="col">
+                <div class="feature-img">
+                    <img src="media/pic1.png" width="100%"
+                    onClick="playVideo('media/vid1.mp4')">
+                    
+                </div>
+            </div>
+            <div class="col">
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="media/pic2.png">
+                        <img src="media/play.png" class="play-btn"
+                        onclick="playVideo('media/vid2.mp4')">
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                        Est asperiores necessitatibus obcaecati nobis voluptatum culpa </p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="media/pic3.png">
+                        <img src="media/play.png" class="play-btn"
+                        onclick="playVideo('media/vid3.mp4')">
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                        Est asperiores necessitatibus obcaecati nobis voluptatum culpa </p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="media/pic4.png">
+                        <img src="media/play.png" class="play-btn" 
+                        onclick="playVideo('media/vid4.mp4')">
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                        Est asperiores necessitatibus obcaecati nobis voluptatum culpa </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-player" id="videoPlayer">
+        <video width="100%" controls autoplay id="myVideo">
+            <source src="media/vid1.mp4" type="video/mp4">
+        </video>
+        <img src="media/close.png" class="close-btn" 
+        onclick="stopVideo()">
+    </div>
+
+<script>
+    var videoPlayer = document.getElementById("videoPlayer");
+    var myVideo = document.getElementById("myVideo");
+
+    function stopVideo(){
+
+        videoPlayer.display = "none";
+
+    }
+    function playVideo(file){
+        myVideo.src = file;
+        videoPlayer.display = "block";
+    }
+        
+</script>
+
+    
+</body>
+</html>
